@@ -1,0 +1,131 @@
+/*   color variables */
+$clr-primary: #5930ff;
+$clr-primary-hover: #29e6a7;
+$clr-primary-dark: #039d69;
+$clr-gray100: #f9fbff;
+$clr-gray150: #f4f6fb;
+$clr-gray200: #eef1f6;
+$clr-gray300: #c7ccdb;
+$clr-gray400: #767b91;
+$clr-gray500: #4f546c;
+$clr-success: #00c853;
+$clr-error: #ff1744;
+
+/*   border radius */
+$radius: 0.2rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: $clr-gray500;
+  background-color: $clr-primary;
+}
+
+.container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: $radius;
+  width: 20rem;
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__label {
+    position: absolute;
+    top: -0.5rem;
+    left: 0.5rem;
+    background-color: white;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  &__input {
+    padding: 1rem;
+    font-family: inherit;
+    color: inherit;
+    outline: none;
+    border: 1px solid $clr-gray300;
+    border-radius: $radius;
+  }
+
+  &__successicon,
+  &__erroricon {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 1rem;
+    display: none;
+  }
+
+  &__successicon {
+    fill: $clr-success;
+  }
+
+  &__erroricon {
+    fill: $clr-error;
+  }
+
+  &__message {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    color: $clr-error;
+    display: none;
+  }
+
+  //   success state
+  &__success input {
+    border: 1px solid $clr-success;
+  }
+
+  &__success svg.form__successicon {
+    display: block;
+  }
+
+  //error state
+  &__error input {
+    border: 1px solid $clr-error;
+  }
+
+  &__error svg.form__erroricon {
+    display: block;
+  }
+
+  &__error p.form__message {
+    display: block;
+  }
+
+  &__button {
+    outline: none;
+    border: none;
+    padding: 1rem;
+    border-radius: $radius;
+    font-family: inherit;
+    cursor: pointer;
+    background-color: $clr-primary;
+    color: white;
+  }
+}
